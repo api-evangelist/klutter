@@ -1,7 +1,33 @@
 aid: klutter
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/klutter.png
 name: Klutter
-description: Klutter is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Klutter is an unresolved entry harvested from the 500 Global portfolio listing
+  and added to the API Evangelist network as a stub for enrichment. The 2026-07-19
+  enrichment pass could not establish a verifiable identity for this company. The
+  URL captured alongside the name in the 500 Global portfolio scrape, price.com,
+  resolves to Price Technologies Inc. (Los Angeles, CA), a consumer cash-back,
+  coupon and price-comparison platform that is a different company and is tracked
+  separately; that pointer has therefore been removed rather than misattributed to
+  Klutter. No company named Klutter with a matching profile could be confirmed in
+  the 500 Global portfolio through public sources. The klutter.com domain is parked
+  (it serves only a JavaScript redirect to a registrar lander), and the other public
+  uses of the name are unrelated third parties: the Klutter Flutter/Kotlin
+  Multiplatform framework by buijs-dev, a Komga comic-server client app for iOS and
+  Android by Mark Winckle, and a music project. None of these are venture-backed
+  companies. There is no developer portal, documentation, API, SDK, package, or
+  specification surface to harvest for this entity, so no artifacts were generated.
 url: https://raw.githubusercontent.com/api-evangelist/klutter/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,9 +35,26 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment-checked: '2026-07-19'
+x-enrichment-status: unresolved-identity
+x-enrichment-note: >-
+  Enrichment 2026-07-19 found no legitimate surface to enrich. The source record in
+  all/500-global/portfolio/500-global-portfolio.yml pairs the name "Klutter" with
+  https://price.com. That URL belongs to Price Technologies Inc., an unrelated
+  consumer cash-back and coupon company, and the surrounding entries in the scrape
+  are alphabetically ordered by that URL (prezent -> price.com -> pricelabsolutions),
+  which indicates the name column is misaligned with the URL column in the upstream
+  harvest rather than that Klutter operates price.com. No probes were run against
+  price.com and no artifacts were derived from it, because doing so would attribute
+  another company's infrastructure, security posture and API surface to Klutter.
+  klutter.com is a parked domain (HTTP 200 serving only a redirect to a registrar
+  lander); klutter.io and getklutter.com do not resolve. Public search surfaces only
+  unrelated uses of the name (the buijs-dev Klutter Flutter/Kotlin framework, a Komga
+  client app, a band). Nothing to enrich without fabrication. Upstream fix needed:
+  correct or drop this entry in the 500 Global portfolio and leads files.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 apis: []
@@ -21,5 +64,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Website
-  url: https://price.com
+- type: 500GlobalPortfolio
+  url: https://500.co/portfolio
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
