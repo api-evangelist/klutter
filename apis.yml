@@ -52,7 +52,7 @@ x-enrichment-note: >-
   unrelated uses of the name (the buijs-dev Klutter Flutter/Kotlin framework, a Komga
   client app, a band). Nothing to enrich without fabrication. Upstream fix needed:
   correct or drop this entry in the 500 Global portfolio and leads files.
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
 tags:
